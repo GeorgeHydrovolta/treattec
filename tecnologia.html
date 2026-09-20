@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tecnologia SONIXED — Estudo de Caso Técnico | Treattec Engineering</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <a class="brand" href="index.html">
+      <img src="assets/img/logo-mark.png" alt="Treattec">
+      <div class="brand-text">
+        <span class="brand-name">Treattec</span>
+        <span class="brand-sub">ENGINEERING</span>
+      </div>
+    </a>
+    <div class="navlinks">
+      <a href="index.html#quem-somos">Quem somos</a>
+      <a href="index.html#o-que-fazemos">O que fazemos</a>
+      <a href="projetos.html">Projetos</a>
+      <a href="tecnologia.html" class="active">Tecnologia</a>
+      <a href="index.html#contato">Contato</a>
+    </div>
+  </nav>
+</header>
+
+<section class="page-head">
+  <div class="wrap">
+    <div class="label">Estudo de caso técnico</div>
+    <h1>Concentração direta de salmoura por SONIXED e recuperação seletiva de minerais</h1>
+    <p>Engenharia, instalação e operação e manutenção locais: Treattec. Unidade costeira, litoral do Ceará.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="notice">
+      <strong>Sobre os números nesta página:</strong> as frações de recuperação, o fator de concentração, os valores de massa recuperada e o consumo específico de energia apresentados abaixo são metas de projeto e resultados de modelo interno da Treattec — <strong>ainda não medidos em campo em escala comercial</strong>, salvo indicação contrária. Essa distinção está marcada em cada tabela e detalhada na última seção desta página.
+    </div>
+
+    <div class="section-head">
+      <div class="label">1. Base do processo</div>
+      <h2>Concentração eletroquímica direta, sem osmose reversa</h2>
+    </div>
+    <div class="prose">
+      <p>A água bruta de alimentação é concentrada diretamente pelo estágio de eletrodiálise com atuação acústica SONIXED — nenhuma osmose reversa é utilizada nesta configuração. O SONIXED divide a alimentação em um fluxo de produto de baixa salinidade e um fluxo de rejeito concentrado, com fator de concentração volumétrica de projeto de ~1,8×.</p>
+      <p>O fluxo de rejeito passa então por um trem de recuperação seletiva em etapas, que isola os minerais de dureza divalentes, o bromo e um fluxo salino rico em monovalentes — este último convertido no próprio local em ácido clorídrico e hidróxido de sódio.</p>
+    </div>
+
+    <div class="section-head">
+      <div class="label">2. Trem de processo</div>
+      <h2>Da concentração SONIXED à separação salina</h2>
+    </div>
+    <div class="process-diagram">
+      <img src="assets/img/process-train.png" alt="Diagrama do trem de processo: pré-tratamento, precipitação de divalentes, oxidação de bromo, SonixEDR, SonixED-BPED e salmoura reduzida">
+    </div>
+    <div class="table-scroll">
+      <table class="data-table">
+        <caption>Trem de recuperação seletiva de minerais a jusante da concentração SONIXED</caption>
+        <thead><tr><th>Etapa</th><th>Função</th></tr></thead>
+        <tbody>
+          <tr><td>Pré-tratamento</td><td>Filtração da alimentação bruta antes do concentrador SONIXED</td></tr>
+          <tr><td>Precipitação de Divalentes</td><td>Precipitação escalonada, controlada por pH e CO₂, de Mg(OH)₂ e depois CaCO₃</td></tr>
+          <tr><td>Bromo (oxidação)</td><td>Recuperação oxidativa de Br₂ a partir da salmoura já isenta de divalentes</td></tr>
+          <tr><td>SonixEDR (condicionamento)</td><td>Concentração adicional do fluxo rico em monovalentes antes da separação salina</td></tr>
+          <tr><td>SonixED-BPED</td><td>Eletrodiálise com membrana bipolar, separando o NaCl em HCl e NaOH</td></tr>
+          <tr><td>Salmoura Reduzida</td><td>Fluxo depletado de minerais e monovalentes, destinado ao descarte</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section-head">
+      <div class="label">3. Química da precipitação seletiva de divalentes</div>
+      <h2>Magnésio e cálcio, recuperados em sequência</h2>
+    </div>
+    <div class="prose">
+      <p>Magnésio e cálcio são recuperados sequencialmente, e não co-precipitados, explorando a grande diferença no produto de solubilidade entre os dois sistemas hidróxido/carbonato:</p>
+      <p>O Mg(OH)₂ precipita primeiro à medida que o pH é elevado (o Mg(OH)₂ tem Ksp muito baixo), com dosagem de NaOH — fornecida em parte pelo loop de reciclagem de NaOH proveniente do estágio BPED a jusante, e não apenas por reagente novo.</p>
+      <p>Uma vez esgotado o magnésio, a dosagem controlada de CO₂ em um pH-alvo distinto precipita o cálcio remanescente como CaCO₃. Esta etapa é, na prática, uma etapa de carbonatação mineral (utilização de CO₂): o CO₂ é consumido estequiometricamente para fixar o Ca²⁺ como carbonato sólido, em vez de ser liberado.</p>
+      <p>Como as duas etapas de precipitação são controladas por pH e dosagem, e não simultâneas, os dois sólidos são recuperados como fluxos separados e de maior pureza, em vez de um único lodo misto de dureza — esta é a base para tratar o Mg(OH)₂ e o CaCO₃ como produtos distintos e valorizáveis separadamente, e não como resíduo.</p>
+    </div>
+
+    <div class="section-head">
+      <div class="label">4. Base de alimentação e metas de recuperação</div>
+      <h2>Composição de referência e frações-alvo</h2>
+    </div>
+    <p class="footnote">As concentrações iônicas abaixo refletem a composição média típica da água do mar; as frações de recuperação são metas de projeto da extração baseada em SONIXED, ainda não medidas em campo em escala comercial.</p>
+    <div class="table-scroll">
+      <table class="data-table">
+        <thead><tr><th>Espécie</th><th>Água do mar (mg/L)</th><th>Meta de recuperação</th><th>Produto</th></tr></thead>
+        <tbody>
+          <tr><td>Mg²⁺</td><td>1.450</td><td>90%</td><td>Mg(OH)₂</td></tr>
+          <tr><td>Ca²⁺</td><td>560</td><td>85%</td><td>CaCO₃</td></tr>
+          <tr><td>Br⁻</td><td>68</td><td>70%</td><td>Br₂</td></tr>
+          <tr><td>Na⁺ (monovalente)</td><td>11.500</td><td>80%</td><td>NaCl → HCl + NaOH (via BPED)</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section-head">
+      <div class="label">5. Recuperação de minerais — base mássica</div>
+      <h2>Estimativa anual por unidade</h2>
+    </div>
+    <p class="footnote">Valores por m³ de rejeito do SONIXED, escalonados para base anual, assumindo operação contínua com fluxo nominal de rejeito de ~15 m³/h (compatível com capacidade de alimentação de ~25–30 m³/h, considerando o fator de concentração de ~1,8× acima). Resultados do modelo interno de extração SONIXED, não rendimentos medidos em piloto.</p>
+    <div class="table-scroll">
+      <table class="data-table">
+        <thead><tr><th>Produto</th><th>Conc. no rejeito</th><th>kg/m³</th><th>t/ano</th><th>Observação</th></tr></thead>
+        <tbody>
+          <tr><td>Mg(OH)₂</td><td>2.610 mg/L</td><td>5,64</td><td>~710</td><td>Meta primária de recuperação — dimensionado para offtake</td></tr>
+          <tr><td>CaCO₃</td><td>1.008 mg/L</td><td>2,14</td><td>~270</td><td>Menor valor unitário — subproduto / crédito de utilização de CO₂</td></tr>
+          <tr><td>Br₂</td><td>122 mg/L</td><td>0,086</td><td>~11</td><td>Opcional — requer dosagem de oxidante</td></tr>
+          <tr><td>NaCl (→ alimentação BPED)</td><td>20.700 mg/L</td><td>42,1</td><td>~5.300</td><td>Não comercializado como sal — convertido no local em HCl/NaOH</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="footnote">O KCl e o Li₂CO₃ foram avaliados no mesmo modelo e excluídos deste caso-base: a recuperação de KCl é tecnicamente viável, porém marginal nessas concentrações, e o Li₂CO₃ não é viável — o teor de lítio da água do mar (~0,2 mg/L) é diluído demais para que este processo o concentre economicamente sem uma etapa dedicada e seletiva para lítio.</p>
+
+    <div class="section-head">
+      <div class="label">6. Separação salina e loop interno de reagente</div>
+      <h2>NaOH reciclado, HCl como coproduto</h2>
+    </div>
+    <div class="prose">
+      <p>O fluxo rico em monovalentes que deixa as etapas de precipitação de divalentes e de bromo é condicionado pelo SonixEDR e alimentado ao estágio SonixED-BPED, onde a eletrodiálise com membrana bipolar separa o NaCl em HCl e NaOH. O NaOH é reciclado de volta à etapa de Precipitação de Divalentes como principal reagente de elevação de pH para a recuperação de Mg(OH)₂, reduzindo o consumo de cáustico externo; o HCl fica disponível no local para funções de regeneração ou como coproduto comercializável.</p>
+    </div>
+
+    <div class="section-head">
+      <div class="label">7. Energia</div>
+      <h2>Consumo específico modelado</h2>
+    </div>
+    <div class="prose">
+      <p>O consumo específico de energia para o caso de recuperação selecionado (Mg(OH)₂ + CaCO₃ + Br₂, fluxo monovalente para o BPED) é modelado em aproximadamente <strong>23 kWh/m³</strong> de rejeito do SONIXED processado. Este valor vem do mesmo modelo interno e ainda não foi validado em campo.</p>
+    </div>
+
+    <div class="section-head">
+      <div class="label">8. O que ainda precisa de validação em campo</div>
+      <h2>Onde termina o modelo e começa o dado medido</h2>
+    </div>
+    <div class="prose">
+      <p>As frações de recuperação (90% / 85% / 70% / 80%) são metas de projeto — o desempenho real da precipitação seletiva depende da interferência de íons-traço e da precisão do controle de dosagem em escala.</p>
+      <p>O fator de concentração de 1,8× do SONIXED e o SEC de 23 kWh/m³ são resultados de modelo, não desempenho medido em stack.</p>
+      <p>A pureza dos produtos Mg(OH)₂ e CaCO₃ (necessária para precificá-los acima de subproduto de baixo grau) ainda não foi analisada de forma independente neste conjunto de dados.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <div>
+      <h2>Quer discutir esse processo aplicado ao seu projeto?</h2>
+      <p>Fale com a Treattec sobre tratamento de água e valorização de salmoura.</p>
+    </div>
+    <a class="btn btn-gold" href="index.html#contato">Fale conosco</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Treattec Engineering — São Paulo, Brasil · CNPJ 37.820.773/0001-24 (Florianópolis, SC)</span>
+    <span>Tratamento de água &amp; valorização de salmoura</span>
+  </div>
+</footer>
+
+</body>
+</html>
