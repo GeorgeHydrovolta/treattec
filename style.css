@@ -23,6 +23,7 @@ body {
   font-size: 17px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
 }
 h1, h2, h3, .label, nav, button, .cta, .btn {
   font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif;
@@ -44,10 +45,10 @@ nav.wrap { display: flex; align-items: center; justify-content: space-between; p
 .brand .brand-text { display: flex; flex-direction: column; line-height: 1.1; }
 .brand .brand-name { font-weight: 800; font-size: 1.02rem; color: var(--maroon); letter-spacing: 0.01em; }
 .brand .brand-sub { font-size: 0.68rem; font-weight: 600; color: var(--slate); opacity: 0.65; letter-spacing: 0.03em; }
-.navlinks { display: none; gap: 28px; font-size: 0.92rem; font-weight: 600; }
+.navlinks { display: flex; gap: 28px; font-size: 0.92rem; font-weight: 600; }
 .navlinks a { text-decoration: none; opacity: 0.75; color: var(--slate); }
 .navlinks a:hover, .navlinks a.active { opacity: 1; color: var(--maroon); }
-@media (min-width: 720px) { .navlinks { display: flex; } }
+.navtoggle { display: none; }
 
 /* Hero */
 .hero { background: linear-gradient(165deg, var(--maroon) 0%, var(--maroon-deep) 100%); color: var(--paper); padding: 56px 0 0; overflow: hidden; }
@@ -151,3 +152,89 @@ footer { padding: 32px 0 calc(32px + env(safe-area-inset-bottom, 0px)); border-t
 footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
 
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+/* ==========================================================================
+   Mobile
+   The hero flow (.flow-steps) and the scroll hints are mobile-only markup:
+   hidden here, revealed in the small-screen block below, where their
+   desktop counterparts (the hero SVG, the full-width process diagram) are
+   too small to read.
+   ========================================================================== */
+.flow-steps { display: none; }
+.scroll-hint { display: none; }
+
+/* Wide process diagram: scrollable at its readable size on small screens */
+@media (max-width: 780px) {
+  .process-diagram { overflow-x: auto; -webkit-overflow-scrolling: touch; padding: 14px; }
+  .process-diagram img { width: 760px; max-width: none; }
+  .scroll-hint { display: block; font-size: 0.8rem; font-style: italic; color: rgba(61,57,53,0.6); margin: -24px 0 26px; }
+  .table-scroll { -webkit-overflow-scrolling: touch; }
+}
+
+/* Hero flow: the SVG cannot shrink legibly, so stack it as a list instead */
+@media (max-width: 759px) {
+  .hero-diagram svg { display: none; }
+  .flow-steps { display: grid; list-style: none; margin: 0; padding: 0 0 8px; }
+  .flow-steps li { position: relative; padding: 0 0 20px 26px; }
+  .flow-steps li::before {
+    content: ''; position: absolute; left: 0; top: 7px;
+    width: 10px; height: 10px; border-radius: 50%; background: #FFFFFF;
+  }
+  .flow-steps li:last-child::before { background: var(--gold); }
+  .flow-steps li::after {
+    content: ''; position: absolute; left: 4px; top: 21px; bottom: 0;
+    width: 2px; background: rgba(231,215,182,0.3);
+  }
+  .flow-steps li:last-child::after { display: none; }
+  .flow-steps strong {
+    display: block; font-family: 'Archivo', sans-serif;
+    font-size: 0.95rem; font-weight: 600; color: var(--gold-soft);
+  }
+  .flow-steps span { font-size: 0.9rem; color: rgba(255,255,255,0.6); }
+}
+
+/* Collapsible navigation, tighter rhythm, larger touch targets */
+@media (max-width: 719px) {
+  .wrap { padding: 0 20px; }
+  nav.wrap { padding: 10px 20px; flex-wrap: wrap; }
+
+  .navtoggle {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 44px; height: 44px; padding: 0;
+    background: transparent; border: 1px solid var(--line);
+    border-radius: 4px; color: var(--maroon); cursor: pointer;
+  }
+  .navtoggle-bar, .navtoggle-bar::before, .navtoggle-bar::after {
+    content: ''; display: block; width: 18px; height: 2px; background: currentColor;
+  }
+  .navtoggle-bar::before { transform: translateY(-6px); }
+  .navtoggle-bar::after { transform: translateY(4px); }
+  .navtoggle[aria-expanded="true"] .navtoggle-bar { background: transparent; }
+  .navtoggle[aria-expanded="true"] .navtoggle-bar::before { transform: rotate(45deg); }
+  .navtoggle[aria-expanded="true"] .navtoggle-bar::after { transform: rotate(-45deg) translateY(-2px); }
+
+  .navlinks {
+    order: 3; width: 100%; flex-direction: column; gap: 0;
+    margin-top: 8px; border-top: 1px solid var(--line);
+  }
+  .navlinks a { padding: 13px 2px; border-bottom: 1px solid var(--line); opacity: 0.9; }
+  .navlinks[hidden] { display: none; }
+
+  section { padding: 56px 0; }
+  .section-head { margin-bottom: 30px; }
+  .hero { padding-top: 40px; }
+  .hero-mark { height: 40px; margin-bottom: 18px; }
+  .hero .wrap { gap: 28px; }
+  .page-head { padding: 40px 0; }
+
+  .service { padding: 26px 22px; }
+  .pillars { gap: 26px; }
+  .gallery img { height: 220px; }
+  .contact-card { padding: 22px; }
+  .contact-card a.email { padding: 6px 0; }
+  .callout { padding: 16px 18px; font-size: 1.05rem; }
+  .notice { padding: 16px 18px; }
+  .cta-band .wrap { gap: 18px; }
+  .btn { padding: 13px 22px; }
+  footer .wrap { flex-direction: column; gap: 6px; }
+}

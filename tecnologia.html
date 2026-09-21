@@ -31,7 +31,10 @@
         <span class="brand-sub">ENGINEERING</span>
       </div>
     </a>
-    <div class="navlinks">
+      <button class="navtoggle" type="button" aria-expanded="false" aria-controls="navlinks" aria-label="Abrir menu">
+        <span class="navtoggle-bar" aria-hidden="true"></span>
+      </button>
+    <div class="navlinks" id="navlinks">
       <a href="index.html#quem-somos">Quem somos</a>
       <a href="index.html#o-que-fazemos">O que fazemos</a>
       <a href="projetos.html">Projetos</a>
@@ -71,6 +74,7 @@
     <div class="process-diagram">
       <img src="assets/img/process-train.png" alt="Diagrama do trem de processo: pré-tratamento, precipitação de divalentes, oxidação de bromo, SonixEDR, SonixED-BPED e salmoura reduzida">
     </div>
+    <p class="scroll-hint">Arraste o diagrama para o lado para ver o trem de processo completo.</p>
     <div class="table-scroll">
       <table class="data-table">
         <caption>Trem de recuperação seletiva de minerais a jusante da concentração SONIXED</caption>
@@ -176,6 +180,8 @@
     <span>Tratamento de água &amp; valorização de salmoura</span>
   </div>
 </footer>
+
+<script src="assets/js/nav.js"></script>
 
 </body>
 </html>
