@@ -117,7 +117,7 @@ section p { color: rgba(61,57,53,0.86); }
 
 /* Video */
 .video-wrap { background: var(--maroon-deep); border-radius: 4px; overflow: hidden; }
-.video-wrap video { width: 100%; display: block; }
+.video-wrap video { width: 100%; height: auto; aspect-ratio: 16 / 9; display: block; }
 
 /* Tag list */
 .taglist { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
